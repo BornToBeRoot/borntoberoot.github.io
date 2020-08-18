@@ -4,7 +4,7 @@ description: 'Add description here...'
 url: 'https://borntoberoot.net'
 baseurl: ''
 profilepic: '/images/borntoberoot.png'
-bkimage: '/images/bk1.jpg'
+bkimage: '/images/background.png'
 #google_analytics: UA-XXXXXX-X
 font_awesome: 'd7ef2b00f2.js'
 
