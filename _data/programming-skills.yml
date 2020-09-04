@@ -7,9 +7,9 @@
   color: 
 
 - name: Python
-  percentage: 20
-  color: dark
+  percentage: 25
+  color: danger
 
 - name: Bash
-  percentage: 20
-  color: info
+  percentage: 25
+  color: dark

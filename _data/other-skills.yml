@@ -1,3 +1,3 @@
 - name: Network / system administration
   percentage: 90
-  color: secondary
+  color: warning
