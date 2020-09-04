@@ -15,13 +15,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 {% include about/skills.html title="Other Skills" source=site.data.other-skills %}
 </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.6/lib/darkmode-js.min.js"></script>
-        <script>
-          function addDarkmodeWidget() {
-            new Darkmode().showWidget();
-          }
-          window.addEventListener('load', addDarkmodeWidget);
-        </script>
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.6/lib/darkmode-js.min.js"></script>
+<script>
+  function addDarkmodeWidget() {
+    new Darkmode().showWidget();
+  }
+  window.addEventListener('load', addDarkmodeWidget);
+</script>
         
 <!--
 <div class="row">
