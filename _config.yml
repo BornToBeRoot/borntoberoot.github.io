@@ -1,33 +1,87 @@
-# Site settings
-title: BornToBeRoot
-description: 'Add description here...'
-url: 'https://borntoberoot.net'
-baseurl: ''
-profilepic: '/images/borntoberoot.png'
-bkimage: '/images/background.png'
-#google_analytics: UA-XXXXXX-X
-font_awesome: 'd7ef2b00f2.js'
+### Site Settings ###
+title               : BornToBeRoot
+description         : >-
+                      Network / system administrator 
+                      and developer of NETworkManager
+baseurl             : ""
+repository          : BornToBeRoot/borntoberoot.github.io
+remote_theme        : YoussefRaafatNasry/portfolYOU
 
+
+### Plugins ###
+plugins:
+  - jemoji
+
+
+### Navbar Settings ###
+nav_exclude:                                            # The following paths are excluded from navbar
+  - pages/tags.html
+  - pages/404.html
+  - pages/index.md  
+
+
+### Author Info ###
 author:
-  name: 'BornToBeRoot'
-# email: xxx@xxx.xx
-  twitter_username: _BornToBeRoot
-#  facebook_username: xxx
-  github_username:  BornToBeRoot
-#  linkedin_username:  xxx
-#  meetup_name: xxx
+  name              : BornToBeRoot
+  image             : https://i.imgur.com/uyDNQnn.jpg
+#  behance           : your_username
+# dribbble          : your_username
+#  email             : username@domain.com
+#  facebook          : your_username
+  github            : BornToBeRoot
+# gitlab            : your_username
+# instagram         : your_username
+# kaggle            : your_username
+#  linkedin          : your_username
+#  medium            : your_username
+# soundcloud        : your_username
+# spotify           : your_username
+# stackoverflow     : your_user_id
+# tumblr            : your_username.tumblr.com
+# twitch            : your_username
+  twitter           : _BornToBeRoot
+# vimeo             : your_username
+# youtube           : your_channel_name
 
-# Build settings
-destination: _site
-markdown: kramdown
-highlighter: rouge
 
-sass:
-    sass_dir: _sass
-    style: compressed
+### Posts ###
+permalink: /blog/:title
 
-kramdown:
-  # use Github Flavored Markdown
-  input: GFM
-  # do not replace newlines by <br>s
-  hard_wrap: false
+
+### Collections ###
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name
+
+
+### Disqus ###
+#disqus: your-short-name-disqus                          # Your website Shortname on disqus
+
+
+### Analytics ###
+analytics:
+  enabled: false                                        # Set true to enable analytics
+  google:
+    tracking_id: your-google-tracking-id
+
+
+### Defaults for collections ###
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      comments: false                                   # Set to true to enable disqus comments
+
+### Exclude from processing ###
+exclude:
+  - README.md
+  - CONTRIBUTING.md
+  - LICENSE
+  - "*.log"
