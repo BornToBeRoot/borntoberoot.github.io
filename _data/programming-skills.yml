@@ -1,10 +1,10 @@
+- name: PowerShell
+  percentage: 90
+  color: 
+
 - name: C# / WPF
   percentage: 80
   color: success
-
-- name: PowerShell
-  percentage: 80
-  color: 
 
 - name: Python
   percentage: 25
