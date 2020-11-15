@@ -1,6 +1,6 @@
 ---
 title: PSScriptAnalyzer integration for GitHub Actions
-tags: GitHub Actions, PowerShell, PSScriptAnalyzer, CI/CD
+tags: [GitHub Actions, PowerShell, PSScriptAnalyzer, CI/CD]
 style: 
 color: 
 description: PSScriptAnalyzer integration for GitHub Actions
