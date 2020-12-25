@@ -15,8 +15,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 {% include about/skills.html title="Other Skills" source=site.data.other-skills %}
 </div>
        
-<!--
 <div class="row">
 {% include about/timeline.html %}
 </div>
--->
