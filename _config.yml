@@ -45,14 +45,14 @@ author:
 
 
 ### Posts ###
-permalink: /blog/:title
+permalink: /Blog/:title
 
 
 ### Collections ###
 collections:
   projects:
     output: true
-    permalink: /projects/:name
+    permalink: /Projects/:name
 
 
 ### Disqus ###

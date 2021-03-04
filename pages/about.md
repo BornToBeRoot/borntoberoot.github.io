@@ -1,7 +1,7 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: BornToBeRoot | About
+permalink: /About/
 weight: 3
 ---
 
