@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About - BornToBeRoot
+title: About
 permalink: /About/
 weight: 3
 ---

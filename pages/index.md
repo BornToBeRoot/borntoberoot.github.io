@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home - BornToBeRoot
+title: Home
 permalink: /
 ---
 
