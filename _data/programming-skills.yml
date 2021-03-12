@@ -3,13 +3,9 @@
   color: 
 
 - name: C# / WPF
-  percentage: 80
+  percentage: 75
   color: success
 
 - name: Python
   percentage: 25
   color: danger
-
-- name: Bash
-  percentage: 25
-  color: dark
