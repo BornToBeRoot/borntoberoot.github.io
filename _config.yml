@@ -52,7 +52,7 @@ permalink: /Blog/:title
 collections:
   projects:
     output: true
-    permalink: /Projects/:name
+    permalink: /projects/:name
 
 
 ### Disqus ###
