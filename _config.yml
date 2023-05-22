@@ -1,8 +1,11 @@
 ### Site Settings ###
 title               : BornToBeRoot
 description         : >-
-                      Network / System Administrator and doing some IaC / DevOps.
-                      Maintainer of <a href="https://borntoberoot.net/NETworkManager">NETworkManager</a> in my spare time.                      
+                      Network / System Administrator and
+                      doing some IaC / DevOps.
+
+                      Maintainer of <a href="https://borntoberoot.net/NETworkManager">NETworkManager</a> 
+                      in my spare time.
 baseurl             : ""
 repository          : BornToBeRoot/borntoberoot.github.io
 remote_theme        : YoussefRaafatNasry/portfolYOU
