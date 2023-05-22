@@ -24,24 +24,9 @@ nav_exclude:                                            # The following paths ar
 author:
   name              : BornToBeRoot
   image             : images/borntoberoot.png
-#  behance           : your_username
-#  dribbble          : your_username
 #  email             : username@domain.com
-#  facebook          : your_username
   github            : BornToBeRoot
-#  gitlab            : your_username
-#  instagram         : your_username
-#  kaggle            : your_username
-#  linkedin          : your_username
-#  medium            : your_username
-#  soundcloud        : your_username
-#  spotify           : your_username
-#  stackoverflow     : your_user_id
-#  tumblr            : your_username.tumblr.com
-#  twitch            : your_username
   twitter           : _BornToBeRoot
-#  vimeo             : your_username
-#  youtube           : your_channel_name
 
 
 ### Posts ###
