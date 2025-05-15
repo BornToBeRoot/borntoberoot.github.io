@@ -1,7 +1,0 @@
-- name: PowerShell
-  percentage: 90
-  color: 
-
-- name: C# / WPF
-  percentage: 75
-  color: success
