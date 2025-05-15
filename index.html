@@ -128,7 +128,7 @@
         margin-top: 1rem;
         color: #ccc;
         font-size: 0.9rem;
-        align-items: center;                
+        align-items: center;
       }
 
       .github-stats span {
@@ -195,7 +195,7 @@
           problems!
         </p>
         <div class="github-stats" data-repo="BornToBeRoot/NETworkManager">
-          <span class="stars" data-type="stars">
+          <span class="stars" data-type="stars" style="margin-right: 1rem">
             <!-- Star Icon -->
             <svg
               aria-hidden="true"
@@ -211,7 +211,7 @@
             </svg>
             <span>Loading...</span>
           </span>
-          <span class="forks" data-type="forks" style="margin-left: 1rem">
+          <span class="forks" data-type="forks" style="margin-right: 1rem">
             <!-- Fork Icon -->
             <svg
               aria-hidden="true"
@@ -229,7 +229,7 @@
             </svg>
             <span>Loading...</span>
           </span>
-          <span class="language" style="margin-left: 1rem">
+          <span class="language">
             <!-- Code Icon -->
             <svg
               aria-hidden="true"
@@ -268,7 +268,7 @@
           class="github-stats"
           data-repo="BornToBeRoot/PowerShell_IPv4NetworkScanner"
         >
-          <span class="stars" data-type="stars">
+          <span class="stars" data-type="stars" style="margin-right: 1rem">
             <!-- Star Icon -->
             <svg
               aria-hidden="true"
@@ -284,7 +284,7 @@
             </svg>
             <span>Loading...</span>
           </span>
-          <span class="forks" data-type="forks" style="margin-left: 1rem">
+          <span class="forks" data-type="forks" style="margin-right: 1rem">
             <!-- Fork Icon -->
             <svg
               aria-hidden="true"
@@ -302,7 +302,7 @@
             </svg>
             <span>Loading...</span>
           </span>
-          <span class="language" style="margin-left: 1rem">
+          <span class="language">
             <!-- Code Icon -->
             <svg
               aria-hidden="true"
@@ -342,7 +342,7 @@
           class="github-stats"
           data-repo="BornToBeRoot/PowerShell_IPv4PortScanner"
         >
-          <span class="stars" data-type="stars">
+          <span class="stars" data-type="stars" style="margin-right: 1rem">
             <!-- Star Icon -->
             <svg
               aria-hidden="true"
@@ -358,7 +358,7 @@
             </svg>
             <span>Loading...</span>
           </span>
-          <span class="forks" data-type="forks" style="margin-left: 1rem">
+          <span class="forks" data-type="forks" style="margin-right: 1rem">
             <!-- Fork Icon -->
             <svg
               aria-hidden="true"
@@ -376,7 +376,7 @@
             </svg>
             <span>Loading...</span>
           </span>
-          <span class="language" style="margin-left: 1rem">
+          <span class="language">
             <!-- Code Icon -->
             <svg
               aria-hidden="true"
@@ -424,7 +424,7 @@
         </svg>
       </a>
     </div>
-   
+
     <script>
       async function fetchGitHubStats(repo) {
         const res = await fetch(`https://api.github.com/repos/${repo}`);
