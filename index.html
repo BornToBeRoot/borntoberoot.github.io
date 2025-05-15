@@ -426,73 +426,75 @@
     </div>
 
     <script>
-      async function fetchGitHubStats(repo) {
-        const res = await fetch(`https://api.github.com/repos/${repo}`);
+      const CACHE_TTL_MS = 60 * 60 * 1000; // 1 hour TTL
 
-        if (res.status === 403) {
-          // Possibly rate limit hit, check message in JSON
-          const errorData = await res.json();
-          if (
-            errorData.message &&
-            errorData.message.includes("API rate limit exceeded")
-          ) {
-            const error = new Error(
-              `GitHub rate limit exceeded! Cannot fetch stats for ${repo}`
-            );
-            error.rateLimit = true; // Custom flag
-            throw error;
-          } else {
-            throw new Error(`Access forbidden for ${repo}`);
-          }
+      async function fetchGitHubRepoStats(repo) {
+        const apiUrl = `https://api.github.com/repos/${repo}`;
+        try {
+          const response = await fetch(apiUrl);
+          if (!response.ok) throw new Error("GitHub API error");
+          return await response.json();
+        } catch (error) {
+          console.error(`Failed to fetch GitHub stats for ${repo}:`, error);
+          return null;
         }
-
-        if (!res.ok) throw new Error(`Failed to fetch ${repo}`);
-        return await res.json();
       }
 
-      function formatNumber(num) {
-        if (num >= 1000000) return (num / 1000000).toFixed(1) + "M";
-        if (num >= 1000) return (num / 1000).toFixed(1) + "k";
-        return num.toString();
+      function updateRepoStats(element, data) {
+        if (!data) return;
+
+        const starsEl = element.querySelector(".stars span");
+        const forksEl = element.querySelector(".forks span");
+        if (starsEl)
+          starsEl.textContent = data.stargazers_count.toLocaleString();
+        if (forksEl) forksEl.textContent = data.forks_count.toLocaleString();
       }
 
-      async function updateAllGitHubStats() {
-        const statElements = document.querySelectorAll(".github-stats");
+      function getCachedData(repo) {
+        const cached = localStorage.getItem(`github_stats_${repo}`);
+        if (!cached) return null;
+        try {
+          const parsed = JSON.parse(cached);
+          if (Date.now() - parsed.timestamp < CACHE_TTL_MS) {
+            return parsed.data;
+          }
+          // Cache expired
+          localStorage.removeItem(`github_stats_${repo}`);
+          return null;
+        } catch {
+          localStorage.removeItem(`github_stats_${repo}`);
+          return null;
+        }
+      }
 
-        // Group elements by repo
-        const repoMap = {};
-        statElements.forEach((el) => {
-          const repo = el.dataset.repo;
-          if (!repoMap[repo]) repoMap[repo] = [];
-          repoMap[repo].push(el);
-        });
+      function cacheData(repo, data) {
+        const cacheObj = { data, timestamp: Date.now() };
+        localStorage.setItem(`github_stats_${repo}`, JSON.stringify(cacheObj));
+      }
 
-        for (const repo in repoMap) {
-          try {
-            const data = await fetchGitHubStats(repo);
-            repoMap[repo].forEach((el) => {
-              const starsEl = el.querySelector(".stars span");
-              const forksEl = el.querySelector(".forks span");
-              if (starsEl)
-                starsEl.textContent = formatNumber(data.stargazers_count);
-              if (forksEl) forksEl.textContent = formatNumber(data.forks_count);
-            });
-          } catch (e) {
-            console.error(e);
-            // On rate limit error, display "-/-"
-            if (e.rateLimit) {
-              repoMap[repo].forEach((el) => {
-                const starsEl = el.querySelector(".stars span");
-                const forksEl = el.querySelector(".forks span");
-                if (starsEl) starsEl.textContent = "-/-";
-                if (forksEl) forksEl.textContent = "-/-";
-              });
+      async function loadGitHubStats() {
+        const statsElements = document.querySelectorAll(
+          ".github-stats[data-repo]"
+        );
+        for (const el of statsElements) {
+          const repo = el.getAttribute("data-repo");
+          if (!repo) continue;
+
+          const cachedData = getCachedData(repo);
+          if (cachedData) {
+            updateRepoStats(el, cachedData);
+          } else {
+            const data = await fetchGitHubRepoStats(repo);
+            if (data) {
+              updateRepoStats(el, data);
+              cacheData(repo, data);
             }
           }
         }
       }
 
-      updateAllGitHubStats();
+      // Run on page load
+      window.addEventListener("DOMContentLoaded", loadGitHubStats);
     </script>
   </body>
 </html>
